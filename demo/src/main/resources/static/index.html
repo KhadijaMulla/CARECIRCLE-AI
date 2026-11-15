@@ -3642,7 +3642,7 @@
        Gracefully falls back to reactive demonstration state if backend is offline.
        ========================================================================== */
     const API_CONFIG = {
-      baseUrl: window.CARECIRCLE_API_URL || "http://localhost:8086/api",
+      baseUrl: window.CARECIRCLE_API_URL || (location.protocol === "file:" ? "http://localhost:8086/api" : "/api"),
       timeoutMs: 6000
     };
 
